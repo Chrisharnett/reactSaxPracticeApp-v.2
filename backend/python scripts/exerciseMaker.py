@@ -67,9 +67,20 @@ def getSampleCollection():
     try:
         minNote = 1
         maxNote = 9
+<<<<<<< HEAD
         notes = stepwiseScaleNotePatterns(minNote, maxNote, (2 * maxNote))
         rhythms = quarterNoteRhythms(4, 4)
         collection = Collection("Quarter Note Ninth Scale", notes, rhythms)
+=======
+        collections = []
+        notes = notePatterns(minNote, maxNote, (2 * maxNote))
+        for n in notes:
+            collections.append(n.serialize())
+        return jsonify(collections)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+>>>>>>> parent of 64bea5c3 (great flow)
 
         return jsonify(collection)
     except Exception as e:

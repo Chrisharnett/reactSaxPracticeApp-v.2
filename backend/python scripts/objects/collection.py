@@ -9,6 +9,7 @@ from objects.player import Player
 class Collection:
     def __init__(self, name, notePatterns=None, rhythmPatterns=None, key="g", mode="major"):
         self.__name = name
+<<<<<<< HEAD
         self.__key = key
         self.__mode = mode
         if rhythmPatterns is None:
@@ -19,6 +20,9 @@ class Collection:
             notePatterns = []
         else:
             self.__notePatterns = notePatterns
+=======
+        self.__notePatterns = []
+>>>>>>> parent of 64bea5c3 (great flow)
 
     def __str__(self):
         return self.__name
@@ -26,9 +30,21 @@ class Collection:
     def __iter__(self):
         return iter(self.__notePatterns)
 
+<<<<<<< HEAD
     @property
     def getTitle(self):
         return self.title
+=======
+    def serialize(self):
+        notePatterns = self.serializeNotePatterns()
+        return {"name": self.__name, "notePatterns": notePatterns}
+
+    # def serializeNotePatterns(self):
+    #     serializedNotePatterns = []
+    #     for p in self.__notePatterns:
+    #         serializedNotePatterns.append(p.serialize())
+    #     return serializedNotePatterns
+>>>>>>> parent of 64bea5c3 (great flow)
 
     @property
     def getNotePatterns(self):

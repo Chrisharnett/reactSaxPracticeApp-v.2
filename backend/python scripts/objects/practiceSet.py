@@ -220,6 +220,7 @@ class PracticeSet:
         )
 
     def getNewNotePattern(self, title):
+<<<<<<< HEAD
         # Get the next matching notePattern - I thin this should not include next()
         # notePatternCollection = next(
         #     x for x in self.__notePatternCollections if x.getNotePatternType == title
@@ -234,6 +235,16 @@ class PracticeSet:
         # Gets the next notePattern index for the player.
         for collection in self.__player.getProgram["collections"]:
             if collection["notePatternType"] == title:
+=======
+        # TODO Check x.getName
+        notePatternCollection = next(
+            x for x in self.__notePatternCollections if x.getName == title
+        )
+        collections = self.__player.getProgram["collections"]
+        currentCollection = None
+        for collection in collections:
+            if collection["title"] == title:
+>>>>>>> parent of 64bea5c3 (great flow)
                 currentPlayerIndex = collection["index"]
                 # currentCollection = collection
                 break
